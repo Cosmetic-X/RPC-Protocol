@@ -3,17 +3,17 @@
 	"version": "1.0.0",
 	"description": "",
 	"main": "index.js",
-	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
-	},
 	"repository": {
 		"type": "git",
 		"url": "git+https://github.com/Cosmetic-X/RPC-Protocol.git"
 	},
 	"author": "xxAROX",
-	"license": "ISC",
+	"license": "CUSTOM",
 	"bugs": {
 		"url": "https://github.com/Cosmetic-X/RPC-Protocol/issues"
 	},
-	"homepage": "https://github.com/Cosmetic-X/RPC-Protocol#readme"
+	"homepage": "https://github.com/Cosmetic-X/RPC-Protocol#readme",
+	"dependencies": {
+		"fs": "^0.0.1-security"
+	}
 }

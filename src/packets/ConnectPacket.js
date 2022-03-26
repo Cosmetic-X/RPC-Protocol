@@ -8,18 +8,18 @@ const {CONNECT} = require("../PacketIds");
 const Packet = require("./Packet.js");
 
 class ConnectPacket extends Packet {
-	null = null;
+	gamertag = null;
 
 	getPacketId() {
 		return CONNECT;
 	}
 
 	decodePayload(serializer) {
-		this.network = serializer.get("null");
+		this.gamertag = serializer.get("gamertag");
 	}
 
 	encodePayload(serializer) {
-		serializer.put("null", this.null);
+		serializer.put("gamertag", this.gamertag);
 	}
 }
 module.exports = ConnectPacket;
