@@ -9,11 +9,7 @@ const Packet = require("./Packet.js");
 
 class UnknownPacket extends Packet {
 	constructor() {
-		super();
-	}
-
-	getPacketId() {
-		return UNKNOWN;
+		super(UNKNOWN);
 	}
 }
 module.exports = UnknownPacket;

@@ -11,12 +11,8 @@ class HeartbeatPacket extends Packet {
 	timestamp;
 
 	constructor() {
-		super();
-		this.timestamp = new Date().getMilliseconds() / 1000;
-	}
-
-	getPacketId() {
-		return HEARTBEAT;
+		super(HEARTBEAT);
+		this.timestamp = new Date().getTime() / 1000;
 	}
 
 	decodePayload(serializer) {

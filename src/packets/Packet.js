@@ -9,14 +9,15 @@ const Serializer = require("../Serializer.js");
 class Packet {
 	static PID_MASK = 0x3ff;
 
-	constructor() {
+	constructor(packet_id) {
+		this._packet_id = packet_id;
 	}
 
 	/**
 	 * @return {number}
 	 */
 	getPacketId() {
-		return -1;
+		return this._packet_id;
 	}
 
 	/**

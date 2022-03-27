@@ -23,10 +23,10 @@ class PacketPool {
 		this.#pool = {};
 		this.#packet_count = 0;
 		this.registerPacket(new UnknownPacket());
-		this.registerPacket(new ConnectPacket());
+		this.registerPacket(new ConnectPacket(null));
 		this.registerPacket(new HeartbeatPacket());
-		this.registerPacket(new UpdateNetworkPacket());
-		this.registerPacket(new UpdateServerPacket());
+		this.registerPacket(new UpdateNetworkPacket(null));
+		this.registerPacket(new UpdateServerPacket(null, null));
 	}
 
 	/**

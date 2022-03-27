@@ -10,8 +10,12 @@ const Packet = require("./Packet.js");
 class ConnectPacket extends Packet {
 	gamertag = null;
 
-	getPacketId() {
-		return CONNECT;
+	/**
+	 * @param {null|string} gamertag
+	 */
+	constructor(gamertag) {
+		super(CONNECT);
+		this.gamertag = gamertag;
 	}
 
 	decodePayload(serializer) {

@@ -11,8 +11,14 @@ class UpdateServerPacket extends Packet {
 	server = null;
 	ends_at = null;
 
-	getPacketId() {
-		return UPDATE_SERVER;
+	/**
+	 * @param {null|string} server
+	 * @param {null|number} ends_at
+	 */
+	constructor(server, ends_at) {
+		super(UPDATE_SERVER);
+		this.server = server;
+		this.ends_at = ends_at;
 	}
 
 	decodePayload(serializer) {

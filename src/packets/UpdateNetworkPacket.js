@@ -10,8 +10,12 @@ const Packet = require("./Packet.js");
 class UpdateNetworkPacket extends Packet {
 	network = null;
 
-	getPacketId() {
-		return UPDATE_NETWORK;
+	/**
+	 * @param {null|string} network
+	 */
+	constructor(network) {
+		super(UPDATE_NETWORK);
+		this.network = network;
 	}
 
 	decodePayload(serializer) {
