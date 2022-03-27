@@ -4,8 +4,6 @@
  * Only people with the explicit permission from Jan Sohn are allowed to modify, share or distribute this code.
  */
 
-const zlib = require("zlib");
-
 class Serializer {
 	_buffer = "{}";
 
@@ -21,18 +19,11 @@ class Serializer {
 	}
 
 	compress() {
-		/*if (this._buffer.length >= 256) {
-		 this._buffer = zlib.deflateRawSync(this._buffer, {level: 7}).toString('base64');
-		 } else {
-		 this._buffer = zlib.deflateRawSync(this._buffer, {level: 0}).toString('base64');
-		 }*/
+		//TODO: Implement compression
 	}
 
 	decompress() {
-		/*this._buffer = zlib.inflateRawSync(Buffer.from(this._buffer, 'base64'), {
-		 level: 7,
-		 maxOutputLength: 2 * 1024 * 1024,
-		 }).toString();*/
+		//TODO: Implement decompression
 	}
 
 	/**

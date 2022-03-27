@@ -4,7 +4,6 @@
  * Only people with the explicit permission from Jan Sohn are allowed to modify, share or distribute this code.
  */
 
-const zlib = require("zlib");
 const Packet = require("./packets/Packet.js");
 const UnknownPacket = require("./packets/UnknownPacket.js");
 const ConnectPacket = require("./packets/ConnectPacket.js");
