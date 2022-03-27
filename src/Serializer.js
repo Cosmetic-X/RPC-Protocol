@@ -29,7 +29,7 @@ class Serializer {
 	}
 
 	decompress() {
-		this._buffer = zlib.inflateRawSync(Buffer.from(this._buffer, "base64"), {
+		this._buffer = zlib.inflateRawSync(Buffer.from(this._buffer, 'base64'), {
 			level: 7,
 			maxOutputLength: 2 * 1024 * 1024,
 		}).toString();
