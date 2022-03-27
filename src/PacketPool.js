@@ -8,6 +8,7 @@ const zlib = require("zlib");
 const Packet = require("./packets/Packet.js");
 const UnknownPacket = require("./packets/UnknownPacket.js");
 const ConnectPacket = require("./packets/ConnectPacket.js");
+const DisconnectPacket = require("./packets/DisconnectPacket.js");
 const HeartbeatPacket = require("./packets/HeartbeatPacket.js");
 const UpdateNetworkPacket = require("./packets/UpdateNetworkPacket.js");
 const UpdateServerPacket = require("./packets/UpdateServerPacket.js");
@@ -24,6 +25,7 @@ class PacketPool {
 		this.#packet_count = 0;
 		this.registerPacket(new UnknownPacket());
 		this.registerPacket(new ConnectPacket(null));
+		this.registerPacket(new DisconnectPacket(null));
 		this.registerPacket(new HeartbeatPacket());
 		this.registerPacket(new UpdateNetworkPacket(null));
 		this.registerPacket(new UpdateServerPacket(null, null));
