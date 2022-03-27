@@ -22,14 +22,17 @@ class Serializer {
 
 	compress() {
 		if (this._buffer.length >= 256) {
-			this._buffer = zlib.deflateRawSync(this._buffer, {level: 7}).toString();
+			this._buffer = zlib.deflateRawSync(this._buffer, {level: 7}).toString('base64');
 		} else {
-			this._buffer = zlib.deflateRawSync(this._buffer, {level: 0}).toString();
+			this._buffer = zlib.deflateRawSync(this._buffer, {level: 0}).toString('base64');
 		}
 	}
 
 	decompress() {
-		this._buffer = zlib.inflateRawSync(this._buffer, {level: 7, maxOutputLength: 2 * 1024 * 1024}).toString();
+		this._buffer = zlib.inflateRawSync(Buffer.from(this._buffer, "base64"), {
+			level: 7,
+			maxOutputLength: 2 * 1024 * 1024,
+		}).toString();
 	}
 
 	/**
