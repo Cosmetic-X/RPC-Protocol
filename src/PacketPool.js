@@ -5,6 +5,7 @@
  */
 
 const zlib = require("zlib");
+const Packet = require("./packets/Packet.js");
 const UnknownPacket = require("./packets/UnknownPacket.js");
 const ConnectPacket = require("./packets/ConnectPacket.js");
 const HeartbeatPacket = require("./packets/HeartbeatPacket.js");
@@ -63,7 +64,7 @@ class PacketPool {
 	 * @return {Packet}
 	 */
 	getPacket(buffer) {
-		//buffer = zlib.inflateRawSync(buffer,{level:7,maxOutputLength:2 * 1024 * 1024}).toString();
+		buffer = zlib.inflateRawSync(buffer, {level: 7, maxOutputLength: 2 * 1024 * 1024}).toString();
 		return this.getPacketById(JSON.parse(buffer)[ "__packet_id" ] & Packet.PID_MASK);
 	}
 
