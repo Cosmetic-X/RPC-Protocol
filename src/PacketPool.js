@@ -64,7 +64,6 @@ class PacketPool {
 	 * @return {Packet}
 	 */
 	getPacket(buffer) {
-		buffer = zlib.inflateRawSync(buffer, {level: 7, maxOutputLength: 2 * 1024 * 1024}).toString('base64');
 		return this.getPacketById(JSON.parse(buffer)[ "__packet_id" ] & Packet.PID_MASK);
 	}
 
