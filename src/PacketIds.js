@@ -9,6 +9,5 @@ module.exports = {
 	HEARTBEAT: 1,
 	CONNECT: 2,
 	DISCONNECT: 3,
-	UPDATE_NETWORK: 4,
-	UPDATE_SERVER: 5,
+	UPDATE_SERVER: 4,
 };

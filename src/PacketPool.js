@@ -9,7 +9,6 @@ const UnknownPacket = require("./packets/UnknownPacket.js");
 const ConnectPacket = require("./packets/ConnectPacket.js");
 const DisconnectPacket = require("./packets/DisconnectPacket.js");
 const HeartbeatPacket = require("./packets/HeartbeatPacket.js");
-const UpdateNetworkPacket = require("./packets/UpdateNetworkPacket.js");
 const UpdateServerPacket = require("./packets/UpdateServerPacket.js");
 const {UNKNOWN} = require("./PacketIds");
 
@@ -26,8 +25,7 @@ class PacketPool {
 		this.registerPacket(new ConnectPacket(null));
 		this.registerPacket(new DisconnectPacket(null));
 		this.registerPacket(new HeartbeatPacket());
-		this.registerPacket(new UpdateNetworkPacket(null));
-		this.registerPacket(new UpdateServerPacket(null, null));
+		this.registerPacket(new UpdateServerPacket(null, null, null));
 	}
 
 	/**
