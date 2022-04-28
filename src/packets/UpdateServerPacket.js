@@ -34,7 +34,7 @@ class UpdateServerPacket extends Packet {
 	encodePayload(serializer) {
 		serializer.put("network", this.network);
 		serializer.put("server", this.server);
-		serializer.put("ends_at", this.ends_at);
+		serializer.put("ends_at", !this.ends_at ? null : this.ends_at);
 	}
 }
 module.exports = UpdateServerPacket;
